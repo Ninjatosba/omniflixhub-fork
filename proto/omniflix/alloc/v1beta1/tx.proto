@@ -1,12 +1,14 @@
 syntax = "proto3";
 package omniflix.alloc.v1beta1;
 
-
-
-
 option go_package = "github.com/OmniFlix/omniflixhub/x/alloc/types";
 
 // Msg defines the alloc Msg service.
 service Msg {
+    // Define your RPC methods here.
+}
 
+// Define the CreateDenom message type.
+message CreateDenom {
+    string subdenom = 1;
 }
