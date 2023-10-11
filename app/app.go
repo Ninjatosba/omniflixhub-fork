@@ -126,6 +126,8 @@ import (
 	"github.com/OmniFlix/omniflixhub/x/itc"
 	itckeeper "github.com/OmniFlix/omniflixhub/x/itc/keeper"
 	itctypes "github.com/OmniFlix/omniflixhub/x/itc/types"
+
+	owasm "github.com/OmniFlix/omniflixhub/wasmbinding"
 )
 
 const Name = "omniflixhub"
@@ -533,6 +535,7 @@ func NewOmniFlixApp(
 		wasmOpts,
 		wasmkeeper.WithQueryPlugins(nil),
 	)
+	wasmOpts = append(owasm.RegisterCustomPlugins(&bankkeeper.BaseKeeper{}, &onftkeeper.Keeper{}), wasmOpts...)
 	app.WasmKeeper = wasm.NewKeeper(
 		appCodec,
 		keys[wasm.StoreKey],
