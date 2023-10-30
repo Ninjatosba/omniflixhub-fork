@@ -536,6 +536,9 @@ func NewOmniFlixApp(
 		wasmkeeper.WithQueryPlugins(nil),
 	)
 	wasmOpts = append(owasm.RegisterCustomPlugins(&bankkeeper.BaseKeeper{}, &onftkeeper.Keeper{}), wasmOpts...)
+
+	wasmOpts = append(owasm.RegisterStargateQueries(*bApp.GRPCQueryRouter(), appCodec), wasmOpts...)
+
 	app.WasmKeeper = wasm.NewKeeper(
 		appCodec,
 		keys[wasm.StoreKey],
