@@ -33,3 +33,4 @@ func RegisterStargateQueries(queryRouter baseapp.GRPCQueryRouter, codec codec.Co
 		queryPluginOpt,
 	}
 }
+ 
