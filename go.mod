@@ -152,7 +152,6 @@ require (
 
 replace (
 	github.com/99designs/keyring => github.com/cosmos/keyring v1.2.0
-	github.com/OmniFlix/onft => /Users/adnandenizcorlu/workspace/junk/onft
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	// cometbft
 	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.28
