@@ -13,7 +13,10 @@ var stargateWhitelist sync.Map
 
 func init() {
 	// onft queries
+	setWhitelistedQuery("/OmniFlix.onft.v1beta1.Query/Collection", &onfttypes.QueryCollectionResponse{})
 	setWhitelistedQuery("/OmniFlix.onft.v1beta1.Query/Params", &onfttypes.QueryParamsResponse{})
+	setWhitelistedQuery("/OmniFlix.onft.v1beta1.Query/OwnerONFTs", &onfttypes.QueryOwnerONFTsResponse{})
+	setWhitelistedQuery("/OmniFlix.onft.v1beta1.Query/Supply", &onfttypes.QuerySupplyResponse{})
 
 }
 
